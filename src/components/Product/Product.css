@@ -1,0 +1,44 @@
+.product {
+	width: 28%;
+	margin: 30px 0;
+	padding: 10px;
+	border: 1px solid rgb(227, 227, 227);
+	border-radius: 10px;
+	position: relative;
+}
+
+.product img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.product-info {
+	padding-bottom: 40px;
+}
+
+.product-info p {
+	font-size: 21px;
+}
+
+.product-info h3 {
+	font-size: 17px;
+}
+
+.product button {
+	font-size: 15px;
+	width: 100%;
+	padding: 15px 0;
+	background-color: #ffe0b3;
+	border: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	cursor: pointer;
+}
+
+.product button:hover {
+	background-color: orange;
+	color: #fff;
+}
