@@ -15,39 +15,3 @@
 	background-color: rgba(255, 153, 0, 0.3);
 	padding: 20px;
 }
-
-.cart-container h1 {
-	text-align: center;
-	color: #ff3030;
-	text-transform: uppercase;
-	font-size: 25px;
-}
-
-.cart-container p {
-	font-size: 17px;
-}
-
-.clear-cart {
-	background-color: #ff3030;
-	color: #fff;
-	padding: 15px 30px;
-	border: none;
-	font-size: 17px;
-	border-radius: 5px;
-	width: 100%;
-	display: block;
-	margin-bottom: 20px;
-	cursor: pointer;
-}
-
-.review-order {
-	background-color: #ff9900;
-	color: #fff;
-	padding: 15px 30px;
-	border: none;
-	font-size: 17px;
-	border-radius: 5px;
-	width: 100%;
-	display: block;
-	cursor: pointer;
-}
