@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import useProduct from '../../hooks/useProduct';
 import { addToDb, getStoreCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
 
 const Shop = () => {
-  const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [products] = useProduct();
+  const [cart, setCart] = useState([])
 
-  // Load Product Data From API
-  useEffect(() => {
-    fetch('products.json')
-      .then(res => res.json())
-      .then(data => setProducts(data));
-  }, [])
 
   // Load Data From Fake data Store.
   useEffect(() => {
@@ -22,8 +18,8 @@ const Shop = () => {
     for (const id in storeCart) {
       const addedProduct = products.find(product => product.id === id);
       if (addedProduct) {
-        const qty = storeCart[id];
-        addedProduct.quantity = qty;
+        const quantity = storeCart[id];
+        addedProduct.quantity = quantity;
         saveCart.push(addedProduct);
       }
     }
@@ -31,10 +27,20 @@ const Shop = () => {
     // Product State ta change hole ai useEffect ta call korbe.
   }, [products])
 
-  const addToCart = (product) => {
-    const newCart = [...cart, product];
+  const addToCart = (selectedProduct) => {
+    let newCart = [];
+    const existsProduct = cart.find(product => product.id === selectedProduct.id);
+    if (!existsProduct) {
+      selectedProduct.quantity = 1
+      newCart = [...cart, selectedProduct];
+    } else {
+      const restProduct = cart.filter(product => product.id !== selectedProduct.id);
+      existsProduct.quantity = existsProduct.quantity + 1
+      newCart = [...restProduct, existsProduct];
+    }
     setCart(newCart);
-    addToDb(product.id);
+    addToDb(selectedProduct.id);
+
   }
 
   return (
@@ -53,7 +59,11 @@ const Shop = () => {
         }
       </div>
       <div className="cart-container">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart}>
+          <Link to='/orders'>
+            <button className='review-order'>Review Order</button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

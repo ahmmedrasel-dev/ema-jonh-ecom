@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .shop-container {
 	display: grid;
 	grid-template-columns: 4fr 1fr;
