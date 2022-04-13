@@ -1,0 +1,46 @@
+.form-container {
+  width: 600px;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 90%;
+}
+
+.register-link{
+  text-align: center;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+.form-btn {
+  background-color: wheat;
+  font-size: 20px;
+  margin-top: 10px;
+}
