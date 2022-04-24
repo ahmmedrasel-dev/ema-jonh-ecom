@@ -19,3 +19,27 @@ a {
 	position: sticky;
 	top: 0;
 }
+
+.pagination {
+  padding: 30px 0;
+  text-align: center;
+}
+.pagination button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+.pagination .selected {
+  background: rgb(255, 133, 39);
+  color: #fff;
+}
+
+.numberOfProduct {
+  width: 60px;
+  height: 40px;
+}
